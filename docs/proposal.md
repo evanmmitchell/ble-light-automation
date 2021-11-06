@@ -66,7 +66,7 @@ With regard to hardware, this project requires a Raspberry Pi 4 and an Arduino N
 What are metrics by which you would check for success?
 -->
 
-This project will be considered successful if at least 80% of light operations are predicted accurately on the fifth day of real-life operation. Note that the user is presumed to be only person interacting with the smart lights. Note also that only two rooms are tested due to both the limited number of availble rooms for testing and budget constraints for purchasing smart light bulbs or outlets, although the project will likely produce the proper results with a larger number of rooms given sufficient BLE devices distributed among them.
+This project will be considered successful if at least 80% of light operations are predicted accurately on the fifth day of real-life operation. Note that the user is presumed to be only person interacting with the smart lights. Note also that only two rooms are tested due to both the limited number of available rooms for testing and budget constraints for purchasing smart light bulbs or outlets, although the project will likely produce the proper results with a larger number of rooms given sufficient BLE devices distributed among them.
 
 Several intermediate tests will also be performed to verify proper operation of the different components. First, proper communication between the Arduino Nano and Home Assistant will be verified. Second, I will test the Arduino's ability to distinguish between the living room and the bedroom based on proximity to recognized BLE devices after scanning ten times in each room. Next, the system will be tested using mock historical data with little variation, testing for the ability to successfully detect patterns and make accurate predictions. Finally, mock historical data with more realistic variation will be used to validate the system, testing for the ability to generalize pattern detection and prediction. In the case of an issue with the real-life test, the final mock test will be used to validate the system.
 
@@ -118,11 +118,11 @@ List references correspondign to citations in your text above. For papers please
 -->
 
 [<a name="1">1</a>] Home Assistant. Available: <https://www.home-assistant.io>  
-[<a name="2">2</a>] Room Assistant. Available: <http://room-assistant.io>  
+[<a name="2">2</a>] Room Assistant. Available: <https://room-assistant.io>  
 [<a name="3">3</a>] S. Shead, "Amazon wants us to stop talking to Alexa so much," CNBC. Available: <https://www.cnbc.com/2021/11/02/amazon-wants-us-to-stop-talking-to-alexa-so-much.html>  
-[<a name="4">4</a>] Y. Pu, P. You, "Indoor positioning system based on BLE location fingerprinting with classification approach," Applied Mathematical Modelling, vol. 62, pp. 654-663, 2018, doi:10.1016/j.apm.2018.06.031.  
+[<a name="4">4</a>] Y. Pu, P. You, "Indoor positioning system based on BLE location fingerprinting with classification approach," Applied Mathematical Modelling, vol. 62, pp. 654-663, 2018, doi: 10.1016/j.apm.2018.06.031.  
 [<a name="5">5</a>] S. Memon, M. M. Memon, F. K. Shaikh and S. Laghari, "Smart indoor positioning using BLE technology," IEEE International Conference on Engineering Technologies and Applied Sciences, pp. 1-5, 2017, doi: 10.1109/ICETAS.2017.8277872.  
-[<a name="6">6</a>] H.B. Barlow, "Unsupervised Learning," Neural Computation, vol. 1, iss. 3, pp. 295–311, 1989, doi: 10.1162/neco.1989.1.3.295.  
+[<a name="6">6</a>] H. B. Barlow, "Unsupervised Learning," Neural Computation, vol. 1, iss. 3, pp. 295–311, 1989, doi: 10.1162/neco.1989.1.3.295.  
 [<a name="7">7</a>] ArduinoBLE. Available: <https://www.arduino.cc/en/Reference/ArduinoBLE>  
 [<a name="8">8</a>] bluepy. Available: <https://github.com/IanHarvey/bluepy>  
 [<a name="9">9</a>] Arduino LSM9DS1. Available: <https://www.arduino.cc/en/Reference/ArduinoLSM9DS1>  

@@ -15,5 +15,5 @@ Modern smart home devices are typically interacted with via smartphone apps or b
 * [Midterm Checkpoint Presentation Slides](checkpoint.pdf)
 * [Midterm Checkpoint Presentation Recording](https://youtu.be/0vCRBBYPsWg)
 * [Final Presentation Slides](presentation.pdf)
-* [Final Presentation Recording](https://youtu.be/Jvj_tI88HUc)
+* [Final Presentation Recording](https://youtu.be/WkyJOP_pBwI)
 * [Final Report](report)

@@ -173,21 +173,21 @@ Despite its limitations, this project successfully demonstrates a path into the 
 List references corresponding to citations in your text above. For papers please include full citation and URL. For datasets and software include name and URL.
 -->
 
-[<a name="1">1</a>] Home Assistant. Available: <https://www.home-assistant.io>  
-[<a name="2">2</a>] Room Assistant. Available: <https://room-assistant.io>  
-[<a name="3">3</a>] V. H. Bhide and S. Wagh, "i-learning IoT: An intelligent self learning system for home automation using IoT," 2015 International Conference on Communications and Signal Processing (ICCSP), 2015, pp. 1763-1767, doi: 10.1109/ICCSP.2015.7322825.  
-[<a name="4">4</a>] S. Shead, "Amazon wants us to stop talking to Alexa so much," CNBC. Available: <https://www.cnbc.com/2021/11/02/amazon-wants-us-to-stop-talking-to-alexa-so-much.html>  
-[<a name="5">5</a>] Z. Jianyong, L. Haiyong, C. Zili and L. Zhaohui, "RSSI based Bluetooth low energy indoor positioning," 2014 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 2014, pp. 526-533, doi: 10.1109/IPIN.2014.7275525.  
-[<a name="6">6</a>] A. I. Kyritsis, P. Kostopoulos, M. Deriaz and D. Konstantas, "A BLE-based probabilistic room-level localization method," 2016 International Conference on Localization and GNSS (ICL-GNSS), 2016, pp. 1-6, doi: 10.1109/ICL-GNSS.2016.7533848.  
-[<a name="7">7</a>] S. Memon, M. M. Memon, F. K. Shaikh and S. Laghari, "Smart indoor positioning using BLE technology," IEEE International Conference on Engineering Technologies and Applied Sciences, 2017, pp. 1-5, doi: 10.1109/ICETAS.2017.8277872.  
-[<a name="8">8</a>] Y. Pu, P. You, "Indoor positioning system based on BLE location fingerprinting with classification approach," Applied Mathematical Modelling, vol. 62, pp. 654-663, 2018, doi: 10.1016/j.apm.2018.06.031.  
-[<a name="9">9</a>] WiFiNINA. Available: <https://www.arduino.cc/en/Reference/WiFiNINA>  
-[<a name="10">10</a>] PubSubClient. Available: <https://www.arduino.cc/reference/en/libraries/pubsubclient/>  
-[<a name="11">11</a>] "MQTT Essentials," HiveMQ. Available: <https://www.hivemq.com/mqtt-essentials>  
-[<a name="12">12</a>] LSM6DSOX. Available: <https://github.com/stm32duino/LSM6DSOX>  
-[<a name="13">13</a>] LSM6DSOX. Available: <https://github.com/evanmmitchell/LSM6DSOX>  
-[<a name="14">14</a>] ArduinoBLE. Available: <https://www.arduino.cc/en/Reference/ArduinoBLE>  
-[<a name="15">15</a>] Home Assistant REST API. Available: <https://developers.home-assistant.io/docs/api/rest/>  
-[<a name="16">16</a>] requests. Available: <https://docs.python-requests.org/en/latest/>  
-[<a name="17">17</a>] paho-mqtt. Available: <https://www.eclipse.org/paho/index.php?page=clients/python/index.php>  
-[<a name="18">18</a>] scikit-learn. Available: <https://scikit-learn.org>  
+<a name="1"></a> [1] Home Assistant. Available: <https://www.home-assistant.io>  
+<a name="2"></a> [2] Room Assistant. Available: <https://room-assistant.io>  
+<a name="3"></a> [3] V. H. Bhide and S. Wagh, "i-learning IoT: An intelligent self learning system for home automation using IoT," 2015 International Conference on Communications and Signal Processing (ICCSP), 2015, pp. 1763-1767, doi: 10.1109/ICCSP.2015.7322825.  
+<a name="4"></a> [4] S. Shead, "Amazon wants us to stop talking to Alexa so much," CNBC. Available: <https://www.cnbc.com/2021/11/02/amazon-wants-us-to-stop-talking-to-alexa-so-much.html>  
+<a name="5"></a> [5] Z. Jianyong, L. Haiyong, C. Zili and L. Zhaohui, "RSSI based Bluetooth low energy indoor positioning," 2014 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 2014, pp. 526-533, doi: 10.1109/IPIN.2014.7275525.  
+<a name="6"></a> [6] A. I. Kyritsis, P. Kostopoulos, M. Deriaz and D. Konstantas, "A BLE-based probabilistic room-level localization method," 2016 International Conference on Localization and GNSS (ICL-GNSS), 2016, pp. 1-6, doi: 10.1109/ICL-GNSS.2016.7533848.  
+<a name="7"></a> [7] S. Memon, M. M. Memon, F. K. Shaikh and S. Laghari, "Smart indoor positioning using BLE technology," IEEE International Conference on Engineering Technologies and Applied Sciences, 2017, pp. 1-5, doi: 10.1109/ICETAS.2017.8277872.  
+<a name="8"></a> [8] Y. Pu, P. You, "Indoor positioning system based on BLE location fingerprinting with classification approach," Applied Mathematical Modelling, vol. 62, pp. 654-663, 2018, doi: 10.1016/j.apm.2018.06.031.  
+<a name="9"></a> [9] WiFiNINA. Available: <https://www.arduino.cc/en/Reference/WiFiNINA>  
+<a name="10"></a> [10] PubSubClient. Available: <https://www.arduino.cc/reference/en/libraries/pubsubclient/>  
+<a name="11"></a> [11] "MQTT Essentials," HiveMQ. Available: <https://www.hivemq.com/mqtt-essentials>  
+<a name="12"></a> [12] LSM6DSOX. Available: <https://github.com/stm32duino/LSM6DSOX>  
+<a name="13"></a> [13] LSM6DSOX. Available: <https://github.com/evanmmitchell/LSM6DSOX>  
+<a name="14"></a> [14] ArduinoBLE. Available: <https://www.arduino.cc/en/Reference/ArduinoBLE>  
+<a name="15"></a> [15] Home Assistant REST API. Available: <https://developers.home-assistant.io/docs/api/rest/>  
+<a name="16"></a> [16] requests. Available: <https://docs.python-requests.org/en/latest/>  
+<a name="17"></a> [17] paho-mqtt. Available: <https://www.eclipse.org/paho/index.php?page=clients/python/index.php>  
+<a name="18"></a> [18] scikit-learn. Available: <https://scikit-learn.org>  

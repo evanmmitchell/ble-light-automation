@@ -117,13 +117,13 @@ Home Assistant [[1](#1)] will be used to manage the smart home integration. The 
 List references correspondign to citations in your text above. For papers please include full citation and URL. For datasets and software include name and URL.
 -->
 
-[<a name="1">1</a>] Home Assistant. Available: <https://www.home-assistant.io>  
-[<a name="2">2</a>] Room Assistant. Available: <https://room-assistant.io>  
-[<a name="3">3</a>] S. Shead, "Amazon wants us to stop talking to Alexa so much," CNBC. Available: <https://www.cnbc.com/2021/11/02/amazon-wants-us-to-stop-talking-to-alexa-so-much.html>  
-[<a name="4">4</a>] Y. Pu, P. You, "Indoor positioning system based on BLE location fingerprinting with classification approach," Applied Mathematical Modelling, vol. 62, pp. 654-663, 2018, doi: 10.1016/j.apm.2018.06.031.  
-[<a name="5">5</a>] S. Memon, M. M. Memon, F. K. Shaikh and S. Laghari, "Smart indoor positioning using BLE technology," IEEE International Conference on Engineering Technologies and Applied Sciences, pp. 1-5, 2017, doi: 10.1109/ICETAS.2017.8277872.  
-[<a name="6">6</a>] H. B. Barlow, "Unsupervised Learning," Neural Computation, vol. 1, iss. 3, pp. 295–311, 1989, doi: 10.1162/neco.1989.1.3.295.  
-[<a name="7">7</a>] ArduinoBLE. Available: <https://www.arduino.cc/en/Reference/ArduinoBLE>  
-[<a name="8">8</a>] bluepy. Available: <https://github.com/IanHarvey/bluepy>  
-[<a name="9">9</a>] Arduino LSM9DS1. Available: <https://www.arduino.cc/en/Reference/ArduinoLSM9DS1>  
-[<a name="10">10</a>] scikit-learn. Available: <https://scikit-learn.org>  
+<a name="1"></a> [1] Home Assistant. Available: <https://www.home-assistant.io>  
+<a name="2"></a> [2] Room Assistant. Available: <https://room-assistant.io>  
+<a name="3"></a> [3] S. Shead, "Amazon wants us to stop talking to Alexa so much," CNBC. Available: <https://www.cnbc.com/2021/11/02/amazon-wants-us-to-stop-talking-to-alexa-so-much.html>  
+<a name="4"></a> [4] Y. Pu, P. You, "Indoor positioning system based on BLE location fingerprinting with classification approach," Applied Mathematical Modelling, vol. 62, pp. 654-663, 2018, doi: 10.1016/j.apm.2018.06.031.  
+<a name="5"></a> [5] S. Memon, M. M. Memon, F. K. Shaikh and S. Laghari, "Smart indoor positioning using BLE technology," IEEE International Conference on Engineering Technologies and Applied Sciences, pp. 1-5, 2017, doi: 10.1109/ICETAS.2017.8277872.  
+<a name="6"></a> [6] H. B. Barlow, "Unsupervised Learning," Neural Computation, vol. 1, iss. 3, pp. 295–311, 1989, doi: 10.1162/neco.1989.1.3.295.  
+<a name="7"></a> [7] ArduinoBLE. Available: <https://www.arduino.cc/en/Reference/ArduinoBLE>  
+<a name="8"></a> [8] bluepy. Available: <https://github.com/IanHarvey/bluepy>  
+<a name="9"></a> [9] Arduino LSM9DS1. Available: <https://www.arduino.cc/en/Reference/ArduinoLSM9DS1>  
+<a name="10"></a> [10] scikit-learn. Available: <https://scikit-learn.org>  

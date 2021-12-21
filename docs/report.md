@@ -1,5 +1,5 @@
-# Table of Contents
-* Abstract
+## Table of Contents
+* [Abstract](#abstract)
 * [Introduction](#1-introduction)
 * [Related Work](#2-related-work)
 * [Technical Approach](#3-technical-approach)
@@ -7,7 +7,7 @@
 * [Discussion and Conclusions](#5-discussion-and-conclusions)
 * [References](#6-references)
 
-# Abstract
+## Abstract
 
 <!--
 Provide a brief overview of the project objectives, approach, and results.
@@ -15,7 +15,7 @@ Provide a brief overview of the project objectives, approach, and results.
 
 Modern smart home devices are typically interacted with via smartphone apps or by speaking to a virtual assistant. However, for turning on and off smart lights, these methods of interaction are often more of a hassle than simply flipping a traditional light switch. Additionally, while many smart home services provide for manually configured automation, it is often difficult to predict precisely when a particular light will need to be turned on and off, leading to wasted energy. This project aims to both eliminate the need to manually configure smart light automations and minimize the time spent directly interacting with smart lights. These goals are achieved by using online supervised learning to observe the manual switching of smart lights and correlate the room-level position of a user with the signal strengths of nearby household Bluetooth Low Energy (BLE) devices. When an inertial measurement unit (IMU) carried by the user detects significant motion, the neural network is queried with nearby BLE signal strengths to determine whether the user has moved to a different room. If so, the appropriate lights are turned on, and lights in the previous room are turned off. In testing, the system correctly recognized every time the user switched rooms, with rooms being alternated every ten, thirty, and sixty minutes.
 
-# 1. Introduction
+## 1. Introduction
 
 <!--
 This section should cover the following items:
@@ -29,8 +29,7 @@ This section should cover the following items:
 * Metrics of Success: What are metrics by which you would check for success?
 -->
 
-
-## Motivation & Objective
+### Motivation & Objective
 
 <!--
 What are you trying to do and why? (plain English without jargon)
@@ -42,7 +41,7 @@ This project aims to both eliminate the need to manually configure smart light a
 
 For this project, Home Assistant [[1](#1)] is used to operate the smart home setup due to its wide compatibility with smart home devices and its open approach to customization. Home Assistant is running on a Raspberry Pi 4, which also hosts an MQTT broker and the neural network Python script. BLE scanning is performed by an Arduino Nano 33 BLE Sense, and motion detection and MQTT publishing is handled by an Arduino Nano RP2040 Connect.
 
-## State of the Art & Its Limitations
+### State of the Art & Its Limitations
 
 <!--
 How is it done today, and what are the limits of current practice?
@@ -54,7 +53,7 @@ Many smart home services allow for manually configured automation, one of the pr
 
 Room Assistant [[2](#2)] provides room-scale positioning by using a network of BLE-equipped Linux computers, one in each room, to track a user's smartphone or smartwatch. The need to station a Raspberry Pi or similar computer in every room, however, limits Room Assistant's practicability. Additionally, automations must still be manually configured.
 
-## Novelty & Rationale
+### Novelty & Rationale
 
 <!--
 What is new in your approach and why do you think it will be successful?
@@ -66,7 +65,7 @@ This project's use of existing household BLE devices for room-level positioning 
 
 Finally, the implementation of dynamic features in the project's neural network is believed to be novel. The full number of weights, representing the maximum number of BLE devices used as features for classification, are initialized, but only a subset of them, matching the seen BLE devices, are trained. As new BLE devices are seen, they are assigned as new features which update the previously untrained weights. After all available features have been assigned, the least recently seen BLE device is replaced with the new one, and the associated weight is dynamically reinitialized. This implementation allows for a dynamic feature set while keeping the maximum number of features fixed to prevent memory issues.
 
-## Potential Impact
+### Potential Impact
 
 <!--
 If the project is successful, what difference will it make, both technically and broadly?
@@ -74,7 +73,7 @@ If the project is successful, what difference will it make, both technically and
 
 If this project is successful, it has the potential to begin changing the mindset around smart home automation. The idea of using online learning to intelligently control smart devices can be extended far beyond turning on and off lights. Additionally, the functions of the Arduino Nanos can be performed by smartphones, which already have IMUs, Wi-Fi, and BLE radios, and similar online learning code can be directly incorporated into smart home services like Home Assistant. More broadly, people will not need to waste time manually controlling home appliances like lights except to initially teach the artificial intelligence and in the case that its predictive actions are wrong.
 
-## Challenges
+### Challenges
 
 <!--
 What are the challenges and risks?
@@ -82,7 +81,7 @@ What are the challenges and risks?
 
 Implementing online supervised learning to correlate room-level position with BLE devices and their signal strengths is the most daunting challenge. Realizing communication between the Arduino Nanos and Home Assistant may also be a difficult endeavor. An additional risk is that there might not be enough BLE devices around the house to infer position accurately.
 
-## Requirements for Success
+### Requirements for Success
 
 <!--
 What skills and resources are necessary to perform the project?
@@ -92,7 +91,7 @@ This project requires familiarity with both Arduino and Python. Experience with 
 
 With regard to hardware, this project requires a Raspberry Pi 4, an Arduino Nano RP2040 Connect, and an Arduino Nano 33 BLE Sense, along with a portable charger. Smart light bulbs or outlets compatible with Home Assistant are also needed, along with a Wi-Fi network. Finally, several relatively stationary BLE devices are necessary for accurate position inference.
 
-## Metrics of Success
+### Metrics of Success
 
 <!--
 What are metrics by which you would check for success?
@@ -102,7 +101,7 @@ This project will be considered successful if at least 80% of room predictions a
 
 Several intermediate tests will also be performed to verify proper operation of the different components. First, proper communication between the Arduino Nano and Home Assistant will be verified. Second, I will test the Arduino's ability to distinguish between the living room and the bedroom based on proximity to recognized BLE devices after scanning ten times in each room. Next, the supervised learning will be tested using logged BLE device scans. Finally, the overall system will be tested empirically, spending ten minutes in each room and seeing if the lights switch as desired.
 
-# 2. Related Work
+## 2. Related Work
 
 Many previous papers have discussed BLE localization in the context of indoor position tracking, suggesting that BLE may provide benefits over other technologies, such as infrared and ultrasonic positioning. However, all previous approaches utilize BLE beacons, which are explicitly designed for more accurate localization, and require an initial offline mapping phase.
 
@@ -110,11 +109,11 @@ Z. Jianyong et al. discusses filtering based on trilateral relations to resolve 
 
 While these approaches can have very accurate results, within a square meter, this level of accuracy requires quite a few BLE beacons to be placed in each room. I argue that room-level localization is sufficient for light automation, and I show that existing household BLE devices are enough to reach that level of accuracy. This project's online mapping initialization, using which lights are on to infer user position, is also much more convenient and intuitive than the offline mapping sequences discussed.
 
-# 3. Technical Approach
+## 3. Technical Approach
 
 This project incorporates several technical components. First, an Arduino Nano 33 BLE Sense runs a script to scan nearby BLE devices and record their MAC addresses and signal strengths. Second, an Arduino Nano RP2040 Connect uses a wired UART connection to request these BLE scans regularly every thirty seconds, as well as when significant motion is detected. It then uses a Wi-Fi connection to publish the scan results to an MQTT topic. Third, a Raspberry Pi 4 runs Home Assistant, which is set up to communicate with three smart outlets with lights plugged into them. These lights are divided between two rooms, a bedroom and a living room. The Raspberry Pi also hosts an MQTT broker to receive messages published by the Nano RP2040. Finally, a Python script running on the Raspberry Pi reads these MQTT messages and uses them to train a neural network to associate BLE signal strengths with the room which currently has lights on. When significant motion is detected, the message is instead used to query the neural network for the room that the user is in and control lights accordingly.
 
-## Arduino Operation and BLE Scanning
+### Arduino Operation and BLE Scanning
 
 While there were initially plans to only use one Arduino, no Arduino supported using BLE and Wi-Fi simultaneously, and so the roles were divided between an Arduino Nano RP2040 Connect and an Arduino Nano 33 BLE Sense. The Nano RP2040 acts as a master, communicating with the Raspberry Pi over Wi-Fi and initiating BLE scans, while the Nano 33 BLE Sense acts as a slave, performing the requested scans.
 
@@ -124,7 +123,7 @@ The Nano RP2040 then uses the LSM6DSOX library [[12](#12)] to enable the built-i
 
 A UART serial connection is established between the Nano RP2040 and the Nano 33 BLE Sense. The Nano RP2040 uses this connection to request a BLE scan every thirty seconds or whenever significant motion is detected. The Nano 33 BLE Sense uses the ArduinoBLE library [[14](#14)] to perform a five-second scan in response, sending the MAC addresses and associated signal strengths of all BLE devices seen back over the same serial connection. The Nano RP2040 then publishes these results and whether or not they were triggered by significant motion to an MQTT topic.
 
-## Python Script
+### Python Script
 
 A Python script running on the Raspberry Pi serves to automate smart lights based on the results of the Arduino BLE scans.
 
@@ -136,7 +135,7 @@ Finally, the output of a neural network query is used to identify lights that sh
 
 This Python script was initially going to be written as a Home Assistant integration for ease of use with Home Assistant, but the integration development process was not very well documented, and I was not able to develop a Home Assistant integration in the time I had. However, I believe the Python script can be developed into an integration in a relatively straightforward manner, since Home Assistant supports MQTT for data transfer. All API calls would then be replaced with function calls provided for integrations.
 
-## Neural Network
+### Neural Network
 
 A dynamic online one-layer neural network was developed for this project using the scikit-learn Python library [[18](#18)]. The stochastic gradient descent classifier was chosen from their library as a flexible linear classifier which allowed me to perform a partial fit on the data available, enabling online learning. It also allowed me to choose the loss function and set a learning rate. The "log" loss was chosen due to its support for providing probability values for each class. A constant learning rate of 0.5 was chosen after some experimental success with that value.
 
@@ -148,7 +147,7 @@ One major difficulty that I dealt with in designing the neural network was incor
 
 The other significant challenge that I encountered was that the scanned BLE MAC addresses changed significantly over time for the same room. I believe this to be the result of Apple implementing dynamic Bluetooth MAC addresses for their products in order to ensure privacy and prevent the possibility of tracking. This severely limits the ability of the classifier to associate MAC addresses and signal strengths with rooms over periods of time longer than thirty minutes. 
 
-# 4. Evaluation and Results
+## 4. Evaluation and Results
 
 Neural network evaluation was performed using the results of 360 BLE scans taken minutely over a five-hour period in each of the two rooms. This data was taken in ten-minute intervals, with the "current" room (the room the user is in) switching at the end of each interval. For each interval, the ten samples from the current room were fed to the neural network, interspersed with the previous ten minutes' samples from the other room, mimicking the way immediate samples are alternated with stored samples during normal operation. At the end of each interval, the following sample from each room was classified. With ten-minute intervals, an 87% accuracy was found. Since this is above 80% for a ten-hour period, it is determined to be a success.
 
@@ -158,7 +157,7 @@ The overall system was also tested empirically. The Arduino Nanos were first pla
 
 The delay from initial detection of significant motion to light switching was found to be approximately eight seconds on average, five of which are the BLE scanning period. This may be interpreted by the user as the system being unresponsive, so perhaps a shorter BLE scanning period could be used when significant motion is detected.
 
-# 5. Discussion and Conclusions
+## 5. Discussion and Conclusions
 
 This project turned out to be very successful, needing only a small amount of configuration to effectively automate smart lights in the home. However, there are some limitations that can be addressed in the future.
 
@@ -168,7 +167,7 @@ Another limitation to address in the future is that the current implementation o
 
 Despite its limitations, this project successfully demonstrates a path into the future for smart homes, using online supervised learning to automate routine tasks. With the functionality of the Arduinos incorporated into a smartphone app and the Python script developed into a Home Assistant integration, the results of this project could be widely utilized with little to no cost to the user. Despite the challenges I faced, this project's novel use of existing household BLE devices for room-level position inference demonstrates the great potential of the BLE devices that slowly fill our homes.
 
-# 6. References
+## 6. References
 
 <!--
 List references corresponding to citations in your text above. For papers please include full citation and URL. For datasets and software include name and URL.

@@ -1,7 +1,6 @@
 # Project Proposal
 
 ## 1. Motivation & Objective
-
 <!--
 What are you trying to do and why? (plain English without jargon)
 -->
@@ -13,7 +12,6 @@ This project aims to both eliminate the need to manually configure smart light a
 For this project, Home Assistant [[1](#1)] will be used to operate the smart home setup due to its wide compatibility with smart home devices and its open approach to customization. Home Assistant will be running on a Raspberry Pi 4, which has built-in Bluetooth support. Motion detection and BLE scanning will be performed by an Arduino Nano 33 BLE Sense, which is portable enough to be kept on the user's person and incorporates both an IMU and a BLE radio.
 
 ## 2. State of the Art & Its Limitations
-
 <!--
 How is it done today, and what are the limits of current practice?
 -->
@@ -25,7 +23,6 @@ While many smart home services allow for manually-configured automation, one of 
 Room Assistant [[2](#2)] provides room-scale positioning by using a network of BLE-equipped Linux computers, one in each room, to track a user's smartphone or smartwatch. The need to station a Raspberry Pi or similar computer in every room, however, limits Room Assistant's practicability. Additionally, automations must still be manually configured.
 
 ## 3. Novelty & Rationale
-
 <!--
 What is new in your approach and why do you think it will be successful?
 -->
@@ -35,7 +32,6 @@ This project's unsupervised learning approach to home light automation is a nove
 This project's use of existing household BLE devices for positioning is also novel. Given the increasing number of BLE-equipped devices positioned throughout the average household, Room Assistant's approach of having Raspberry Pi or similar computers in each room is largely unnecessary. This project's approach requires less cost and setup effort for similar benefits, likely making it more popular.
 
 ## 4. Potential Impact
-
 <!--
 If the project is successful, what difference will it make, both technically and broadly?
 -->
@@ -43,7 +39,6 @@ If the project is successful, what difference will it make, both technically and
 If this project is successful, it has the potential to begin changing the mindset around smart home automation. The idea of using unsupervised learning to intelligently control smart devices can be extended far beyond turning on and off lights. Additionally, the functions of the Arduino Nano can be performed by smartphones, which already have the IMUs and BLE radios, and similar unsupervised learning code can be directly incorporated into smart home services like Home Assistant. More broadly, people will not need to waste time manually controlling home appliances like lights except to initially teach the artificial intelligence and to correct it if its predictions are wrong.
 
 ## 5. Challenges
-
 <!--
 What are the challenges and risks?
 -->
@@ -51,7 +46,6 @@ What are the challenges and risks?
 Implementing the unsupervised learning to recognize how patterns in time, motion, and position correspond with light switching is the most daunting challenge. Realizing BLE communication between the Arduino Nano and Home Assistant may also be a difficult endeavor. An additional risk is that there might not be enough BLE devices around the house to infer position accurately.
 
 ## 6. Requirements for Success
-
 <!--
 What skills and resources are necessary to perform the project?
 -->
@@ -61,7 +55,6 @@ This project requires familiarity with both Arduino and Python. Experience with 
 With regard to hardware, this project requires a Raspberry Pi 4 and an Arduino Nano 33 BLE Sense with a portable charger. Smart light bulbs or outlets compatible with Home Assistant are also needed, along with a wireless network connection. Finally, several stationary BLE devices are necessary for position inference.
 
 ## 7. Metrics of Success
-
 <!--
 What are metrics by which you would check for success?
 -->
@@ -71,7 +64,6 @@ This project will be considered successful if at least 80% of light operations a
 Several intermediate tests will also be performed to verify proper operation of the different components. First, proper communication between the Arduino Nano and Home Assistant will be verified. Second, I will test the Arduino's ability to distinguish between the living room and the bedroom based on proximity to recognized BLE devices after scanning ten times in each room. Next, the system will be tested using mock historical data with little variation, testing for the ability to successfully detect patterns and make accurate predictions. Finally, mock historical data with more realistic variation will be used to validate the system, testing for the ability to generalize pattern detection and prediction. In the case of an issue with the real-life test, the final mock test will be used to validate the system.
 
 ## 8. Execution Plan
-
 <!--
 Describe the key tasks in executing your project, and in case of team project describe how will you partition the tasks.
 -->
@@ -84,9 +76,7 @@ Describe the key tasks in executing your project, and in case of team project de
 1. Verify metrics of success.
 
 ## 9. Related Work
-
 ### 9.a. Papers
-
 <!--
 List the key papers that you have identified relating to your project idea, and describe how they related to your project. Provide references (with full citation in the References section below).
 -->
@@ -96,7 +86,6 @@ The paper "Indoor positioning system based on BLE location fingerprinting with c
 The paper "Unsupervised Learning" [[6](#6)] introduces the idea and may prove useful in the development of the unsupervised learning system.
 
 ### 9.b. Datasets
-
 <!--
 List datasets that you have identified and plan to use. Provide references (with full citation in the References section below).
 -->
@@ -104,7 +93,6 @@ List datasets that you have identified and plan to use. Provide references (with
 There is no planned use of datasets for this project.
 
 ### 9.c. Software
-
 <!--
 List softwate that you have identified and plan to use. Provide references (with full citation in the References section below).
 -->
@@ -112,7 +100,6 @@ List softwate that you have identified and plan to use. Provide references (with
 Home Assistant [[1](#1)] will be used to manage the smart home integration. The ArduinoBLE Arduino library [[7](#7)] and the bluepy Python library [[8](#8)] will be utilized for performing Bluetooth communication between the Nano and Home Assistant, with the ArduinoBLE library also facilitating the scanning of nearby BLE devices. The LSM9DS1 Arduino library [[9](#9)] will be used for receiving acceleration data from onboard IMU. The Python library scikit-learn [[10](#10)] is being evaluated for performing unsupervised learning. Additionally, Room Assistant [[2](#2)] may serve as a reference for performing accurate BLE position inference.
 
 ## 10. References
-
 <!--
 List references correspondign to citations in your text above. For papers please include full citation and URL. For datasets and software include name and URL.
 -->

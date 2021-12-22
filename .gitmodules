@@ -1,3 +1,0 @@
-[submodule "software/Arduino/NanoRP2040Connect/src/LSM6DSOX"]
-	path = software/Arduino/NanoRP2040Connect/src/LSM6DSOX
-	url = https://github.com/evanmmitchell/LSM6DSOX.git

@@ -10,14 +10,14 @@ from sklearn.linear_model import SGDClassifier
 from secrets import HOME_ASSISTANT_AUTH
 
 
-NUM_BLE_DEVICES = 250
+LIGHT_ENTITIES = {"bedroom": ["switch.bedroom_light"], "living_room": ["switch.string_lights", "switch.rose"]}
+ROOMS = list(LIGHT_ENTITIES)
 
 HOME_ASSISTANT_API = "http://localhost:8123/api/"
-HEADERS = {"Authorization": HOME_ASSISTANT_AUTH, "Content-Type": "application/json"}
+HEADERS = {"Authorization": f"Bearer {HOME_ASSISTANT_AUTH}", "Content-Type": "application/json"}
 MQTT_BROKER = "localhost"
 
-ROOMS = ["bedroom", "living_room"]
-LIGHT_ENTITIES = {"bedroom": ["switch.bedroom_light"], "living_room": ["switch.string_lights", "switch.rose"]}
+NUM_BLE_DEVICES = 250
 
 
 def on_connect(client, userdata, flags, rc):
@@ -30,13 +30,13 @@ client.connect(MQTT_BROKER)
 classifier = SGDClassifier(loss="log", learning_rate="constant", eta0=0.5)
 init_weight = None
 last_seen_ble_devices = {}
-stored_messages = {"bedroom": [], "living_room": []}
-stored_messages_index = {"bedroom": 0, "living_room": 0}
+stored_messages = {room: [] for room in ROOMS}
+stored_messages_index = {room: 0 for room in ROOMS}
 store = True
 switch_timer = 0
 
 
-lights_on = {"bedroom": False, "living_room": False}
+lights_on = {room: False for room in ROOMS}
 was_sunset = True
 sunset = False
 

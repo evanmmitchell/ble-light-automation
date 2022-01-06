@@ -116,7 +116,7 @@ A Python script running on the Raspberry Pi serves to automate smart lights base
 
 First, some constants are defined providing the names of the Home Assistant light entities and the rooms they are in. Get requests are then sent frequently to the Home Assistant API [[15](#15)] using the requests library [[16](#16)] in order to determine which room's lights are on at any given time. The room whose lights are on is used as the correct class for neural network training. Since only one user is assumed for purposes of cost and simplicity, training is paused whenever lights are on in multiple rooms.
 
-Next, the paho-mqtt library [[17](#17)]. is used to subscribe to the MQTT topic where Arduino BLE scan results are published. These results are used as training data for the neural network and as queries when significant motion is detected.
+Next, the paho-mqtt library [[17](#17)] is used to subscribe to the MQTT topic where Arduino BLE scan results are published. These results are used as training data for the neural network and as queries when significant motion is detected.
 
 Finally, the output of a neural network query is used to identify lights that should be turned on and turned off. Post requests are sent to the Home Assistant API to make these changes.
 
